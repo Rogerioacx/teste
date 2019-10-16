@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+		<meta charset="utf-8" />
+		<title>Projeto - Thayanne Vitoria </title>	
+		<link rel="icon" type="image/jpg" href="img/Koala.jpg" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		
+		<!--<script src="js/script.js"></script> -->
+		
+		<script>
+			
+			var liga=0;
+			
+			function alterna() {
+				if (liga == 0) {
+					document.getElementById('botao').src='ima/liga.jpg';
+					document.getElementById('alegria').innerHTML = "DESLIGAR";
+					liga = 1;
+				}else {
+					document.getElementById('botao').src='ima/desliga.jpg';
+					document.getElementById('alegria').innerHTML = "LIGAR";
+					liga = 0;
+				}
+			}
+			
+			function alterna2() {
+				if (liga == 0) {
+					document.getElementById('doido').src='ima/liga.jpg';
+					liga = 1;
+				}else {
+					document.getElementById('doido').src='ima/desliga.jpg';
+					liga = 0;
+				}
+			}
+			
+		
+			
+			function liga() {
+				document.getElementById('botao').src='ima/liga.jpg';
+			}
+			function desliga() {
+				document.getElementById('botao').src='ima/desliga.jpg';
+			}
+			
+			
+		</script>
+    </head>
+	
+	<body>
+		<div id="container">
+		
+			
+
+		<p id="demo">Olá</p>
+
+<!--		<img id="botao" src="ima/desliga.jpg" />
+			<button id='alegria' type="button" onclick="alterna()">ALTERNAR</button>
+			<button type="button" onclick="liga()">LIGAR</button>
+			<button type="button" onclick="desliga()">DESLIGAR</button>
+					
+			<a id="link" onclick="alterna2()"> <img id="doido" src="ima/desliga.jpg" /> </a>
+			-->
+			<P>CALCULE O SEU IMC</P>
+			<form action="/pagina-processa-dados-do-form" method="post">
+				<div>
+					<label for="Peso">PESO:</label>
+					<input type="number" id="peso" />
+				</div>
+				<div>
+					<label for="Altura">ALTURA:</label>
+					<input type="number" id="altura" />
+				</div>
+				<div class="button">
+					<button type="button" onclick="imc()">LIGAR</button>
+				</div>
+			</form>
+			
+			
+		<script>
+					
+			function imc(){
+				var peso, altura, imc;
+				
+				peso = document.getElementById("peso").value;
+				
+				//peso = prompt("Digite o seu peso");
+				
+				altura = document.getElementById("altura").value;
+				
+				imc = peso/Math.pow(altura,2);
+				
+				document.getElementById("demo").innerHTML = imc;
+				
+				if (imc == 17) {
+					document.getElementById("demo").innerHTML = imc +"    ->"+ "Abaixo de 17	Muito abaixo do peso";
+				}else if (imc >= 17 && imc <= 18.49){
+					document.getElementById("demo").innerHTML = imc +"    ->"+ "Entre 17 e 18,49	Abaixo do peso";
+				}else if (imc >= 18.5 && imc <= 24.99){
+					document.getElementById("demo").innerHTML = imc +"    ->"+ "Entre 18,5 e 24,99	Peso normal";
+				}else if (imc >= 25 && imc <= 29.99){
+					document.getElementById("demo").innerHTML = imc +"    ->"+ "Entre 25 e 29,99	Acima do peso";
+				}else if (imc >= 30 && imc <= 34.99){
+					document.getElementById("demo").innerHTML = imc +"    ->"+ "Entre 30 e 34,99	Obesidade I";
+				}else if (imc >= 35 && imc <= 39.99){
+					document.getElementById("demo").innerHTML = imc +"    ->"+ "Entre 35 e 39,99	Obesidade II (severa)";
+				}else{
+					document.getElementById("demo").innerHTML = imc +"    ->"+ "Acima de 40	Obesidade III (mórbida)";
+				}
+			
+			}
+
+
+
+
+		</script>
+		
+
+		
+		
+
+		
+		
+		
+		
+		
+	</body>
+</html>
